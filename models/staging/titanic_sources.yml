@@ -11,16 +11,32 @@ sources:
             tests:
               - not_null
               - unique
+          - name: launch_order
+            tests:
+              - not_null
+              - unique
       - name: titanic_crew
         columns:
           - name: age
             tests:
               - not_null
-              - unique
           - name: sex
             tests:
               - not_null
               - accepted_values:
                   arguments:
                     values: ['male', 'female']
-              
+      - name: titanic_passengers
+        columns:
+          - name: survived
+            tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [0, 1]
+          - name: sex
+            tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: ['male', 'female']

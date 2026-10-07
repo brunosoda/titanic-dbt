@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_titanic_passengers
+    columns:
+      - name: embarked_from
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Southampton', 'Cherbourg', 'Queenstown']
+      - name: class
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['First', 'Second', 'Steerage']
