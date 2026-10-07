@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: raw
+    database: titanic_database
+    schema: raw
+    tables:
+      - name: titanic_boats
+        columns:
+          - name: boat
+            tests:
+              - not_null
+              - unique
+      - name: titanic_crew
+        columns:
+          - name: age
+            tests:
+              - not_null
+              - unique
+          - name: sex
+            tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: ['male', 'female']
+              
