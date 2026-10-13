@@ -4,3 +4,11 @@ dbt_packages/
 logs/
 .env
 .env .*
+
+# Local DuckDB database
+data/*.duckdb
+data/*.wal
+
+# Python
+__pycache__/
+*.pyc
