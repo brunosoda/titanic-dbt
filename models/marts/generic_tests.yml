@@ -1,0 +1,13 @@
+models:
+  - name: fct_boats_fullfilment
+    columns:
+      - name: boat
+        tests:
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_titanic_passengers')
+                field: boat
+              config:
+                severity: warn
+                

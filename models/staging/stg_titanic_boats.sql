@@ -1,8 +1,16 @@
 select
     boat,
     capacity,
-    side,
-    position,
+    case
+        when side = 'port' then 'left'
+        when side = 'starboard' then 'right'
+        else side
+    end as side,
+    case
+        when position = 'stern' then 'back'
+        when position = 'bow' then 'front'
+        else position
+    end as position,
     launch_order,
     case
         when launch_time in (
