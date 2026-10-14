@@ -12,3 +12,4 @@ data/*.wal
 # Python
 __pycache__/
 *.pyc
+dbt_internal_packages/
